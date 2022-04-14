@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-![logo](_media/icon.svg)
+![logo](/logo.png)
 
 # 矿泉水的笔记 <small>3.5</small>
 
