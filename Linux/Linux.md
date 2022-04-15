@@ -1,5 +1,7 @@
 # Linux
 
+--------
+
 网络查看
 
 ```shell
@@ -7,7 +9,11 @@ apt-get install iftop
 iftop
 ```
 
-## 命令
+## 常用命令
+
+| 命令      |说明|
+| ------  | ----- |
+ls -l|查看全部文件
 
 | 说明   |命令   |
 | ----------- | ----------- |
@@ -21,10 +27,10 @@ iftop
 
 | 说明   |命令   |
 | ----------- | ----------- |
-| 更新软件列表 | apt-get update |
-| 更新软件 | apt-get upgrade |
-| 搜索软件 | search |
-| 卸载软件 | autoremove
+| 更新软件列表 | ```apt-get update``` |
+| 更新软件 | ```apt-get upgrade``` |
+| 搜索软件 | ```apt search *``` |
+| 卸载软件 | ```apt autoremove *```
 
 ### 编译安装
 
@@ -60,18 +66,22 @@ iftop
 
 #### php
 
-master进程可以理解以下信号
-
-INT, TERM 立刻终止
-QUIT 平滑终止
-USR1 重新打开日志文件
-USR2 平滑重载所有worker进程并重新载入配置和二进制模块
+> master进程可以理解以下信号
+>
+> | 信号   | 说明  |
+> | ----------- | ----------- |
+> INT, |TERM 立刻终止
+> QUIT | 平滑终止
+> USR1 |重新打开日志文件
+> USR2 |平滑重载所有worker进程并重新载入配置和二进制模块
 
 | 说明   |命令   |
 | ----------- | ----------- |
-| 启动 | php-fpm |
+| 启动 | ```php-fpm``` |
 | 查看进程 |  ```ps auxfww \| grep php \| grep -v grep``` |
-| 重启php-fpm | kill -USR2 13225 |
+| 重启php-fpm | ```kill -USR2 13225``` |
+
+如果 php-fpm 找不到文件，修改 nginx.congig
 
 ```nginx
  fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
