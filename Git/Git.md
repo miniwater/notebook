@@ -1,39 +1,46 @@
 # Git
+
 用sourcetree管理
 
 配置信息
-```
+
+```shell
 git config --list
 ```
 
 配置用户信息
-```
-$ git config --global user.name "runoob"
-$ git config --global user.email test@runoob.com
+
+```shell
+git config --global user.name "runoob"
+git config --global user.email test@runoob.com
 ```
 
 查询配置信息
-```
+
+```shell
 git config user.name
 ```
 
 ## 已有
 克隆
-```
+
+```shell
 git clone <repo> <directory>
 ```
 
 ## 创建
 
 初始化
-```
+
+```shell
 git init
 ```
 
 ## 常用命令
 
 提交暂存文件
-```
+
+```git
 git add .
 ```
 
@@ -43,17 +50,17 @@ git reset HEAD
 ```
 
 撤销滚暂存前的修改
-```
+```git
 git checkout .
 ```
 
 撤销全部修改（包括暂存）
-```
+```git
 git checkout HEAD .
 ```
 
 提交暂存文件
-```
+```git
 git commit -m '备注'
 ```
 

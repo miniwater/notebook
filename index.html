@@ -7,7 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@v1.x/themes/prism.css"> -->
+
 </head>
 
 <body>
@@ -47,19 +49,52 @@
         nextText: '下一章节',
         crossChapter: true,
         crossChapterText: true,
-      },
+      }, //分页
       scrollToTop: {
         text: 'Top',
-      }
+      }, //返回顶部
+      beian: {
+        ICP: "粤ICP备20058687号",
+        NISMSP: {
+          number: "",
+          url: "",
+          id: ""
+        },
+      }, //备案
+
     }
   </script>
   <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//unpkg.com/docsify-count/dist/countable.js"></script> //文章统计
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script> //搜索
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script> //复制代码
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script> //分页
-  <script src="//unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script> //返回顶部
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!--文章统计-->
+  <script src="https://unpkg.com/docsify-count/dist/countable.js"></script>
+  <!--搜索-->
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!--复制代码-->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <!--分页-->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!--返回顶部-->
+  <script src="https://unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script>
+  <!--备案-->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-beian@latest/dist/beian.min.js"></script>
+
+
+
+  <!--下面是代码高亮-->
+  <!-- <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-nginx.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-git.min.js"></script>
+
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/prismjs@1.x/components/prism-core.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/prismjs@1.x/plugins/autoloader/prism-autoloader.min.js"></script> -->
+
+
+
 </body>
 
 </html>

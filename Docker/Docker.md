@@ -45,18 +45,22 @@
 * 删除容器
 先删除container（images运行时的的状态）
 可以使用命令docker ps来查看正在运行的container，对于已经退出的container，则可以使用docker ps -a来查看
-```
+
+```shell
 docker ps -a
 docker rm 117843ade696
 ```
+
 删除容器
-```
+
+```shell
 docker images
 docker rmi 117843ade696
 ```
 
 更新容器
-```
+
+```shell
 docker-compose pull
 docker-compose up -d
 ```

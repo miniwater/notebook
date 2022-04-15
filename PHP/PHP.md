@@ -1,11 +1,13 @@
 # PHP
+
 PHP-FPM(FastCGI Process Manager：FastCGI进程管理器)是一个PHPFastCGI管理器
 
 session的常见实现要借助cookie来发送sessionID.
 session = cookie + 其他东西根据实际需求而产生的东西
 
 ## 数组函数
-```
+
+```php
 1.array_key_change_case($arr,$case)：将数组所有的键转化为大写或者小写，$case可设为CASE_LOWER或者CASE_UPPER。
 
 2.array_chunk($arr,$number)：把数组分割为有特定($number)个元素的数组块。
@@ -69,15 +71,14 @@ session = cookie + 其他东西根据实际需求而产生的东西
 31.ksort()：把数组按照键名降升序序排列。
 
 32.list()：把数组中的值赋给一些变量。list($a,$b,$c) = array(1,2,3)。
-————————————————
-版权声明：本文为CSDN博主「yangSnowy」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/m0_37742748/article/details/80399712
 ```
 
 ## 设计模式
+
 高内聚低耦合
 
 ### 单例模式
+
 只内部new一次，后面可以一直调用
 mysql链接
 
@@ -88,13 +89,14 @@ mysql链接
 工厂设计模式常用于根据输入参数的不同或者应用程序配置的不同来创建一种专门用来实例化并返回其对应的类的实例。
 
 ### 适配器模式
+
 将一个类的接口转换成客户希望的另一个接口,适配器模式使得原本的由于接口不兼容而不能一起工作的那些类可以一起工作。
 
 应用场景：老代码接口不适应新的接口需求，或者代码很多很乱不便于继续修改，或者使用第三方类库。例如：php连接数据库的方法：mysql,,mysqli,pdo,可以用适配器统一
 
 ### 观察者模式
-一个对象通过提供方法允许另一个对象即观察者 注册自己）使本身变得可观察。当可观察的对象更改时，它会将消息发送到已注册的观察者。
 
+一个对象通过提供方法允许另一个对象即观察者 注册自己）使本身变得可观察。当可观察的对象更改时，它会将消息发送到已注册的观察者。
 
 ### 策略模式
 
@@ -111,6 +113,7 @@ mysql链接
 
 
 ### 装饰器模式
+
 data->where（）
 　　1：装饰器模式，可以动态的添加修改类的功能 
 　　2：一个类提供了一项功能，如果要在修改并添加额外的功能，传统的编程模式，需要写一个子类继承它，并重写实现类的方法 
@@ -118,10 +121,11 @@ data->where（）
 
 　　使用场景：当某一功能或方法draw，要满足不同的功能需求时，可以使用装饰器模式；
 
-
 #### 魔术方法
+
 constuct()构造函数
-```
+
+```php
 class Stu {
  public $stu_name;
  public $stu_age;
@@ -140,17 +144,18 @@ $stu = new Stu('孙悟空','500');
 destruct()析构方法
 与构造方法是一对，构造方法是在一个对象“出生”的时候由系统自动调用的，而析构方法是在一个对象“消失”的时候由系统自动调用的！
 析构方法的名字叫destruct()；注意里面不能有任何的参数！
-```
+
+```php
 //析构方法
 public function destruct(){
 }
 ?>
 ```
 
-
 clone()克隆
 触发时机：是在克隆一个对象的时候，对新对象进行初始化的工作
-```
+
+```php
 //克隆方法在克隆对象的时候对新对象的初始化工作
 public function clone(){
  $this->is_clone=true;
@@ -159,7 +164,8 @@ public function clone(){
 
 autoload()自动加载类
 当调用不存在的类的时候自动调用！
-```
+
+```php
 /**
 * 自动加载类
 * 需要什么类autoload会自动调用需要的文件
@@ -193,7 +199,8 @@ isset()
 
 call()
 当调用无法访问的普通方法时自动触发
-```
+
+```php
 class Stu{
  public function call(){
 　　echo "error";
@@ -209,7 +216,8 @@ $stu->show();
 
 callststic()
 当无法通过静态方法访问时自动触发
-```
+
+```php
 class Stu{
  public static function callstatic(){
   echo "error";
@@ -229,7 +237,8 @@ $stu::show();
 如果是用普通的 == 来进行比较，那么两个字符串是从第一位开始逐一进行比较的，发现不同就立即返回 false，那么通过计算返回的速度就知道了大概是哪一位开始不同的，这样就实现了电影中经常出现的按位破解密码的场景。
 
 所以php中为了应对这种情况,可以使用hash_equals函数。
-```
+
+```php
 <?php
 $expected  = crypt('12345', '$2a$07$usesomesillystringforsalt$');
 $correct   = crypt('12345', '$2a$07$usesomesillystringforsalt$');

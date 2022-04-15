@@ -2,13 +2,13 @@
 
 网络查看
 
-```
+```shell
 apt-get install iftop
 iftop
 ```
-source /etc/profile
 
 ## 命令
+
 | 说明   |命令   |
 | ----------- | ----------- |
 |查找看命令简介|type ls|
@@ -18,29 +18,38 @@ source /etc/profile
 ## 软件更新与安装
 
 ### 系统源
+
 | 说明   |命令   |
 | ----------- | ----------- |
 | 更新软件列表 | apt-get update |
 | 更新软件 | apt-get upgrade |
-| 搜索软件 | search | 
-| 卸载软件 | autoremove 
+| 搜索软件 | search |
+| 卸载软件 | autoremove
 
 ### 编译安装
-查看编译信息
-```
-./configure --help | more
-```
-编译
-```
-./configure --prefix=/opt/xxx 
-```
-安装
-```
-make && make install
-```
+
+* 查看编译信息
+
+    ```shell
+    ./configure --help | more
+    ```
+
+* 编译
+
+    ```shell
+    ./configure --prefix=/opt/xxx 
+    ```
+
+* 安装
+
+    ```shell
+    make && make install
+    ```
 
 ### 软件常见命令
+
 #### nginx
+
 | 说明   |命令   |
 | ----------- | ----------- |
 |启动|nginx|
@@ -50,6 +59,7 @@ make && make install
 |重新加载配置文件| nginx -s reload |
 
 #### php
+
 master进程可以理解以下信号
 
 INT, TERM 立刻终止
@@ -63,18 +73,28 @@ USR2 平滑重载所有worker进程并重新载入配置和二进制模块
 | 查看进程 |  ```ps auxfww \| grep php \| grep -v grep``` |
 | 重启php-fpm | kill -USR2 13225 |
 
-```
+```nginx
  fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 ```
 
+## 环境配置
+
+更新环境
+
+```shell
+source /etc/profile
+```
+
 ## 权限
+
 修改目录下所有权限
 sudo chmod 777 /目录/ -R
 修改目录下所有用户组
  chown www:www www -R
 
 ## 用户管理
-```
+
+```shell
 # 创建xxx用户
 useradd xxx
 # 修改xxx用户的密码
@@ -82,6 +102,7 @@ passwd xxx
 ```
 
 ## 文件
+
 从当前目录下到家目录 cd 或者 cd ~
 |     说明    |     命令    |
 | ----------- | ----------- |
@@ -105,43 +126,45 @@ passwd xxx
 |查阅最后一行日志 | tac |
 
 ## 其他
+
 |     说明    |     命令    |
 | ----------- | ----------- |
 |清理shel     |clear(或者<kbd>Ctrl</kbd>+<kbd>L</kbd>)|
 |关机 | shutdown -h now |
 |重启 | reboot [-n] [-w] [-d] [-f] [-i] |
 
-
 ## 用户
+
 |     说明    |     命令    |
 | ----------- | ----------- |
 |当前在线用户 |who|
 |我是谁 |whoami|
 
 ## 系统
+
 |     说明    |     命令    |
 | ----------- | ----------- |
 |内核信息 |uname -a|
 |输出 |echo $PATH|
 |历史命令 |history|
 
-
 ## 查看硬盘
+
 ```shell
 df
 ```
 
 ## 查看路径
+
 ```shell
 pwd
 ```
 
 ## 防火墙
+
 ```shell
 iptables -L
 ```
-
-
 
 创建
 [root@git-node1 ~]#useradd nulige
@@ -150,6 +173,7 @@ iptables -L
 usermod -s /bin/bash git
 
 # screen 多重视窗管理
+
 |     说明    |     命令    |
 | ----------- | ----------- |
 |创建会话 |screen -S session_name|
@@ -158,14 +182,14 @@ usermod -s /bin/bash git
 |关闭会话 | exit |
 |离开会话并不关闭 | <kbd>Ctrl</kbd> + <kbd>a</kbd> 然后再按 <kbd>d</kbd> |
 
-
-
 # 磁盘扩容
 
 ## 扩大已有MBR分区
+
 以“CentOS 7.4 64bit”操作系统为例，系统盘“/dev/vda”原有容量40GB，只有一个分区“/dev/vda1”。将系统盘容量扩大至100GB，本示例将新增的60GB划分至已有的MBR分区内“/dev/vda1”内。
 
 1. 执行以下命令，安装growpart扩容工具。
+
 ```
 yum install cloud-utils-growpart
 ```
@@ -174,11 +198,13 @@ yum install cloud-utils-growpart
 可以用growpart命令检查当前系统是否已安装growpart扩容工具，若回显为工具使用介绍，则表示已安装，无需重复安装。
 
 2. 执行以下命令，查看系统盘“/dev/vda”的总容量。
+
 ```
 fdisk -l
 ```
 
 回显类似如下信息：
+
 ```
 [root@ecs-test-0001 ~]# fdisk -l
 
@@ -195,11 +221,13 @@ Device Boot      Start         End      Blocks   Id  System
 ```
 
 3. 执行以下命令，查看系统盘分区“/dev/vda1”的容量。
+
 ```
 df -TH
 ```
 
 回显类似如下信息：
+
 ```
 [root@ecs-test-0001 ~]# df -TH
 Filesystem     Type      Size  Used Avail Use% Mounted on
@@ -215,11 +243,13 @@ tmpfs          tmpfs     398M     0  398M   0% /run/user/0
 growpart 系统盘 分区编号
 
 命令示例：
+
 ```
 growpart /dev/vda 1
 ```
 
 回显类似如下信息：
+
 ```
 [root@ecs-test-0001 ~]# growpart /dev/vda 1
 CHANGED: partition=1 start=2048 old: size=83884032 end=83886080 new: size=209713119,end=209715167
@@ -229,11 +259,13 @@ CHANGED: partition=1 start=2048 old: size=83884032 end=83886080 new: size=209713
 resize2fs 磁盘分区
 
 命令示例：
+
 ```
 resize2fs /dev/vda1
 ```
 
 回显类似如下信息：
+
 ```
 [root@ecs-test-0001 ~]# resize2fs /dev/vda1
 resize2fs 1.42.9 (28-Dec-2013)
@@ -243,11 +275,13 @@ The filesystem on /dev/vda1 is now 26214139 blocks long.
 ```
 
 6. 执行以下命令，查看扩容后系统盘分区“/dev/vda1”的容量。
+
 ```
 df -TH
 ```
 
 回显类似如下信息：
+
 ```shell
 [root@ecs-test-0001 ~]# df -TH
 Filesystem     Type      Size  Used Avail Use% Mounted on
@@ -260,14 +294,17 @@ tmpfs          tmpfs     398M     0  398M   0% /run/user/0
 ```
 
 ## 新增MBR分区
+
 系统盘“/dev/vda”原有容量40GB，只有一个分区“/dev/vda1”。将系统盘容量扩大至80GB，本示例为新增的40GB分配新的MBR分区“/dev/vda2”。
 
 执行以下命令，查看磁盘的分区信息。
+
 ```
 fdisk -l
 ```
 
 回显类似如下信息：
+
 ```
 [root@ecs-2220 ~]# fdisk -l
 
@@ -281,14 +318,17 @@ Disk identifier: 0x0008d18f
 Device Boot      Start         End      Blocks   Id  System
 /dev/vda1   *        2048    83886079    41942016   83  Linux
 ```
+
 表示当前系统盘“dev/vda”容量为80 GB，当前正在使用的分区“dev/vda1”为40 GB，新扩容的40 GB还未分配分区。
 
 执行如下命令之后，进入fdisk分区工具。
+
 ```
 fdisk /dev/vda
 ```
 
 回显类似如下信息：
+
 ```
 [root@ecs-2220 ~]# fdisk /dev/vda
 Welcome to fdisk (util-linux 2.23.2).
@@ -302,6 +342,7 @@ Command (m for help):
 
 输入“n”，按“Enter”，开始新建分区。
 回显类似如下信息：
+
 ```
 Command (m for help): n
 Partition type:
@@ -319,6 +360,7 @@ e   extended
 
 以创建一个主要分区为例，输入“p”，按“Enter”，开始创建一个主分区。
 回显类似如下信息：
+
 ```
 Select (default p): p
 Partition number (2-4, default 2):
@@ -326,6 +368,7 @@ Partition number (2-4, default 2):
 
 以分区编号选择“2”为例，输入分区编号“2”，按“Enter”。
 回显类似如下信息：
+
 ```
 Partition number (2-4, default 2): 2
 First sector (83886080-167772159, default 83886080):
@@ -335,6 +378,7 @@ First sector (83886080-167772159, default 83886080):
 系统会自动提示分区可用空间的起始磁柱值和截止磁柱值，可以在该区间内自定义，或者使用默认值。起始磁柱值必须小于分区的截止磁柱值。
 
 回显类似如下信息：
+
 ```
 First sector (83886080-167772159, default 83886080):
 Using default value 83886080
@@ -345,6 +389,7 @@ Last sector, +sectors or +size{K,M,G} (83886080-167772159,default 167772159):
 系统会自动提示分区可用空间的起始磁柱值和截止磁柱值，可以在该区间内自定义，或者使用默认值。起始磁柱值必须小于分区的截止磁柱值。
 
 回显类似如下信息：
+
 ```
 Last sector, +sectors or +size{K,M,G} (83886080-167772159,
 default 167772159):
@@ -356,6 +401,7 @@ Command (m for help):
 
 输入“p”，按“Enter”，查看新建分区。
 回显类似如下信息：
+
 ```
 Command (m for help): p
 
@@ -374,6 +420,7 @@ Command (m for help):
 
 输入“w”，按“Enter”，将分区结果写入分区表中。
 回显类似如下信息：
+
 ```
 Command (m for help): w
 The partition table has been altered!
@@ -399,11 +446,13 @@ mkfs -t 文件系统 磁盘分区
 
 ext*文件系统命令示例：
 以“ext4” 文件格式为例：
+
 ```
 mkfs -t ext4 /dev/vda2
 ```
 
 回显类似如下信息：
+
 ```
 [root@ecs-2220 ~]# mkfs -t ext4 /dev/vda2
 mke2fs 1.42.9 (28-Dec-2013)
@@ -430,11 +479,13 @@ Writing superblocks and filesystem accounting information: done
 ```
 
 xfs文件系统命令示例：
+
 ```
 mkfs -t xfs /dev/vda2
 ```
 
 回显类似如下信息：
+
 ```
 [root@ecs-2220 ~]# mkfs -t xfs /dev/vda2
 meta-data=/dev/vda2              isize=512     agcount=4, agsize=2621440 blks
@@ -456,6 +507,7 @@ realtime =none                   extsz=4096    blocks=0, rtextents=0
 mkdir 挂载目录
 
 以新建挂载目录“/opt”为例：
+
 ```
 mkdir /opt
 ```
@@ -464,6 +516,7 @@ mkdir /opt
 mount 磁盘分区 挂载目录
 
 以挂载新建分区“/dev/vda2”至“/opt”为例：
+
 ```
 mount /dev/vda2 /opt
 ```
@@ -472,11 +525,13 @@ mount /dev/vda2 /opt
 新增加的分区挂载到不为空的目录时，该目录下原本的子目录和文件会被隐藏，所以，新增的分区最好挂载到空目录或者新建目录。如确实要挂载到不为空的目录，可将该目录下的子目录和文件临时移动到其他目录下，新分区挂载成功后，再将子目录和文件移动回来。
 
 执行以下命令，查看挂载结果。
+
 ```
 df -TH
 ```
 
 回显类似如下信息：
+
 ```
 [root@ecs-2220 ~]# df -TH
 Filesystem     Type      Size  Used Avail Use% Mounted on
