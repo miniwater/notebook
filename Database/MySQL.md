@@ -13,7 +13,9 @@ mysql -h192.168.200.202 -uroot -p123456 beegotable -e "select * from user";
 | -e | 执行语句并退出 |
 
 ## 笔记
+
 宝塔放行root
+
 ```mysql
 # 登录
 mysql -u root -p123456#语法mysql -u 用户名 -p密码
