@@ -31,6 +31,7 @@ ls -l|查看全部文件
 | 更新软件 | ```apt-get upgrade``` |
 | 搜索软件 | ```apt search *``` |
 | 卸载软件 | ```apt autoremove *```
+| 搜索软件列表 | ```apt list *java*```
 
 ### 编译安装
 
