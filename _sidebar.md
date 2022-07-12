@@ -7,6 +7,7 @@
   * [Git](Tools/Git.md "Git笔记")
   * [正则表达式](Tools/正则表达式.md "正则表达式笔记")
   * [Emoji表情代码](Tools/Emoji.md "Emoji表情代码大全")
+  * [颜色对照表](Tools/颜色对照表.md "颜色对照表")
 
 * 编程语言
   * [PHP](Languages/PHP.md "PHP笔记")
@@ -21,5 +22,4 @@
   * [Linux](System/Linux.md "Linux笔记")
   * [Docker](System/Docker.md "Docker笔记")
 
-* [颜色对照表](颜色对照表.md "颜色对照表")
 * [docsify](docsify.md "docsify")

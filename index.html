@@ -31,10 +31,12 @@
       subMaxLevel: 5, //侧边栏层级
       loadNavbar: true, //导航栏
       coverpage: false, //封面
-      alias: {//别名
+      alias: { //别名
         '/.*/_sidebar.md': '/_sidebar.md',
         '/.*/_navbar.md': '/_navbar.md',
+        '/.*/_404.md': '/_404.md',
       },
+      notFoundPage: true, //404页面
       count: { //统计
         countable: true,
         position: 'top',
@@ -100,7 +102,6 @@
         color: "var(--theme-color,#42b983)",
         height: "3px",
       },
-
     }
   </script>
 
@@ -124,7 +125,6 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <!-- 阅读进度 -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
-  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script> -->
   <!--下面是代码高亮-->
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
