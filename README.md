@@ -299,6 +299,11 @@ php
 
 - 综合网 <https://www.v2rayssr.com/>
 - 色域检测 <https://webkit.org/blog-files/color-gamut/>
+- 极下网盘提取连接 <https://jx.jixia.ink/>
+极下防失联:<https://jixia.ink/>
+极下防失联:<https://jixia.pro/>
+极下防失联:<https://down.fit/>
+极下防失联:<https://jixia.ltd/>
 
 ## 声明
 
