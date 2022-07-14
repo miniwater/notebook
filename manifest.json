@@ -1,0 +1,17 @@
+{
+    "default_locale": "en",
+    "name": "矿泉水",
+    "short_name": "kqs",
+    "start_url": "./#/",
+    "id": "/",
+    "theme_color": "#fff",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "简单易读的笔记应用程序", 
+    "orientation": "any",
+    "icons": [{
+        "src": "favicon.ico",
+        "sizes": "256x256",
+        "type": "image/png"
+    }]
+}

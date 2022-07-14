@@ -1,9 +1,7 @@
 <!-- _navbar.md -->
 
-* [主页](https://miniwater.github.io/notebook/)
+* [首页](#)
 * [博客](https://krjojo.com/)
-<!-- * 主题
-  * [默认]()
-  * [黑暗]() -->
-<!-- * [:us:, :uk:](/)
-* [:cn:](/zh-cn/) -->
+* 镜像
+  * [GitHub](https://miniwater.github.io/notebook/)
+  * [云主机](http://note.krjojo.com/)
